@@ -1,0 +1,10 @@
+### VS Code ###
+.vscode/
+
+### OS X ###
+##############################
+.DS_Store
+### ignore files in WSL ###
+
+**/*.Identifier
+
