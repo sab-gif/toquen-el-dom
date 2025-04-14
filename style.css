@@ -5,9 +5,11 @@
 
 body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: rgb(187, 184, 184);
 }
+
+/* header*/
 
 header{
     position: sticky;
@@ -31,3 +33,28 @@ header button{
     background-color: rgb(30, 136, 175);
     border: none;
 }
+
+/* main section intro */
+
+/* main section about-us */
+
+/* main section select-instrument */
+
+.select-instrument {
+    display: flex;
+    flex-direction: column;
+}
+
+.try-play {
+    text-align: center;
+}
+
+.instruments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* main section contact-us */
+
+/* footer */
