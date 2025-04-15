@@ -31,7 +31,6 @@ header{
     top: 0;
     text-shadow: 0px 0px 10px black;
     font-style: italic;
-    width: 100vw;
     background-color: rgba(255, 255, 255, 0.300);
     color: white;
 }
@@ -114,6 +113,43 @@ header button{
 }
 
 /* footer */
+
+footer{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-title{
+    display: flex;
+    align-items: center;
+}
+
+.footer-info{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-contact > a{
+    color: black;
+    text-decoration: none;
+}
+
+.footer-adress{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 /* piano title*/
 .main-piano > section{
