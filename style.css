@@ -166,12 +166,11 @@ header button{
     top: 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    aspect-ratio: 1/0.54;
     z-index: 1000;
 }
 .black-keys > button {
     width: calc(var(--width)/12);
-    height: 100%;
+    height: calc(var(--width)/(168/90));;
     position: absolute;
     border-top: none;
     background: linear-gradient(#555, #000 30%); 
