@@ -12,7 +12,7 @@
 body{
     display: flex;
     flex-direction: column;
-    background-color: rgb(187, 184, 184);
+    background-color: #de892e8c;
 }
 main{
     display: flex;
@@ -62,7 +62,32 @@ header button{
     height: 100dvh;
 }
 /* main section about-us */
+.about-us{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 30px;
+}
 
+.about-text{
+    flex: 2; 
+    text-align: justify;
+}
+
+.about-text h2{
+    margin-bottom: 20px;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 /* main section select-instrument */
 
 .select-instrument {
