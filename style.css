@@ -4,8 +4,8 @@
 }
 
 :root{
-    --toalwidth: 80dvw;
-    --width:calc(var(--toalwidth)/2);
+    --toalwidth: 80vw;
+    --width:calc(var(--toalwidth)/3);
     --k15: calc(var(--width)/11.2);
     --k14: calc(var(--width)/12);
     --k13: calc(var(--width)/(168/13));
@@ -132,6 +132,7 @@ header button{
     flex-direction: row;
     width: var(--totalwidth);
     justify-content: center;
+    height: fit-content;
 }
 
 /* piano wrapper*/
