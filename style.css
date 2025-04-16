@@ -4,7 +4,8 @@
 }
 
 :root{
-    --width: 90dvw;
+    --toalwidth: 80vw;
+    --width:calc(var(--toalwidth)/3);
     --k15: calc(var(--width)/11.2);
     --k14: calc(var(--width)/12);
     --k13: calc(var(--width)/(168/13));
@@ -179,12 +180,21 @@ footer{
 }
 
 /* piano title*/
-.main-piano > section{
+.piano-title{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 1em;
+}
+
+/* piano section*/
+.piano{
+    display:flex;
+    flex-direction: row;
+    width: var(--totalwidth);
+    justify-content: center;
+    height: fit-content;
 }
 
 /* piano wrapper*/
@@ -196,7 +206,7 @@ footer{
     justify-content: center;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    --width: 90dvw;
+
     height: fit-content;
     aspect-ratio: 1/0.89;
 }
