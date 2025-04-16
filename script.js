@@ -33,14 +33,18 @@ keyC3.addEventListener("click", playNote()) */
 
 
 
-const keys  = document.querySelectorAll(".key"); //NodeList [] //HTMLCollection(12) 
+const keys  = document.querySelectorAll(".key"); //NodeList [] 
 console.log(keys);
 
 keys.forEach(key => {
     key.addEventListener("click", () =>{
         const note = key.getAttribute("data-note");
-        const audio = new Audio(`./assets/sounds/${note}.mp3`);
+        const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
         audio.currentTime= 0;
         audio.play();
+        key.classList.add('active')
+        audio.addEventListener('ended', () => {
+            key.classList.remove('active');
+        })
     })
 })
