@@ -37,14 +37,33 @@ const keys  = document.querySelectorAll(".key"); //NodeList [] 
 console.log(keys);
 
 keys.forEach(key => {
-    key.addEventListener("click", () =>{
-        const note = key.getAttribute("data-note");
-        const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+    const note = key.getAttribute("data-note");
+    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+    key.addEventListener("mousedown", () =>{
+        const start = performance.now()
+        console.log("mousedown", start);
         audio.currentTime= 0;
+        audio.playbackRate = 1;
         audio.play();
         key.classList.add('active')
-        audio.addEventListener('ended', () => {
-            key.classList.remove('active');
-        })
+    })
+    key.addEventListener("mouseout", () => {
+        if (!audio.paused) {
+            setTimeout(() => {
+                audio.pause()}, 500)
+            const end = performance.now()
+            console.log("mouseout", end);
+        }        
+    })
+    key.addEventListener("mouseup", () => {
+        if (!audio.paused) {
+            setTimeout(() => {
+                audio.pause()}, 500)
+            const end2 = performance.now()
+            console.log("mouseup", end2);
+        }  
+    })
+    audio.addEventListener('ended', () => {
+        key.classList.remove('active');
     })
 })
