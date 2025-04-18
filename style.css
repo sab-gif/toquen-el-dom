@@ -155,7 +155,7 @@ button p{
     background-image: url(./assets/drums-play-button.jpg);
 }
 
-.overlay {
+.overlay{
     position: absolute;
     top: 0;
     left: 0;
