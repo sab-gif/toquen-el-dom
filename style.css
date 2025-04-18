@@ -1,43 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&display=swap');
+
+
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: "Lexend";
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Kanit";
+}
+
+:root{
+    --toalwidth: 80vw;
+    --width:calc(var(--toalwidth)/3);
+    --k15: calc(var(--width)/11.2);
+    --k14: calc(var(--width)/12);
+    --k13: calc(var(--width)/(168/13));
 }
 
 body{
     display: flex;
     flex-direction: column;
-    background-color: rgb(187, 184, 184);
+    background-color: #de892e8c;
+}
+main{
+    display: flex;
+    flex-direction: column;
 }
 
 /* header*/
 
 header{
-    position: sticky;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: rgba(240, 248, 255, 0.33);
-    padding: 1em;
+    padding: 2em;
     top: 0;
     text-shadow: 0px 0px 10px black;
-    font-style: italic;
-    width: 100vw;
     background-color: rgba(255, 255, 255, 0.300);
+    width: 100%;
+    color: white;
 }
 
 header button{
     color: white;
-    width: 110px;
-    height: 20px;
+    width: fit-content;
+    height: fit-content;
     border-radius: 15px;
     background-color: rgb(30, 136, 175);
     border: none;
+    padding: 1em;
 }
 
 /* main section intro */
 
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+    text-shadow: 0px 0px 10px black;
+    text-align: center;
+    background-image: url("./assets/piano-intro-background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100dvh;
+}
 /* main section about-us */
+.about-us{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 30px;
+}
 
+.about-text{
+    flex: 2; 
+    text-align: justify;
+}
+
+.about-text h2{
+    margin-bottom: 20px;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
 /* main section select-instrument */
 
 .select-instrument {
@@ -57,4 +117,188 @@ header button{
 
 /* main section contact-us */
 
+.contact-us{
+    background-image: url("./assets/piano-teacher-contact-us.jpg");
+    background-size: cover;
+    background-color: transparent;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.text-visit-us{
+    color: white;
+    max-width: 40%;
+    right: 50px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-start;   
+}
+
+.box-discover-rhythm{
+    background-color: rgba(255, 255, 255, 0.722);
+    padding: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
 /* footer */
+
+footer{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-title{
+    display: flex;
+    align-items: center;
+}
+
+.footer-info{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    flex-direction: row;
+    gap: 2em;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-contact > a{
+    color: black;
+    text-decoration: none;
+}
+
+.footer-adress{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* piano title*/
+.main-piano{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+
+}
+.piano-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+/* piano section*/
+.piano{
+    display:flex;
+    flex-direction: row;
+    width: var(--totalwidth);
+    justify-content: center;
+    height: fit-content;
+}
+
+/* piano wrapper*/
+.piano-wrapper{
+    align-self: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    height: fit-content;
+    aspect-ratio: 1/0.89;
+}
+.keys > button{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0;
+}
+
+.white-keys{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    aspect-ratio: 1/0.89;
+}
+
+.white-keys > button {
+    width: calc(var(--width)/7);
+    border: 1px solid #999;
+    box-shadow: inset 0 0 8px #999999;
+    background: linear-gradient(#ddd, #fff 25%);
+    border-top: none;
+}
+
+.black-keys{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    z-index: 1000;
+}
+.black-keys > button {
+    width: calc(var(--width)/12);
+    height: calc(var(--width)/(168/90));;
+    position: absolute;
+    border-top: none;
+    background: linear-gradient(#555, #000 30%); 
+    box-shadow:  0 4px 5px #ccc, inset 0px 0px 0px 2px rgba(220, 220, 220, 0.2);
+    border: solid #000;
+    border-width: 0 8px 14px;
+    border-bottom-color: #424546;
+    border-left-color: #121516;
+    border-right-color: #121516;
+}
+
+.black-keys > button:nth-child(1){
+    left: var(--k15);
+}
+.black-keys > button:nth-child(2){
+    left: calc(var(--k15) + var(--k14)*2);
+}
+.black-keys > button:nth-child(3){
+    left: calc(var(--k15)*2 + var(--k14)*3 + var(--k13));
+}
+.black-keys > button:nth-child(4){
+    left: calc(var(--k15)*2 + var(--k14)*5 + var(--k13));
+}
+.black-keys > button:nth-child(5){
+    left: calc(var(--k15)*2 + var(--k14)*7 + var(--k13));
+} 
+.white-keys > button:hover{
+    cursor: pointer;
+    background: linear-gradient(#ffffff, #eeeded 25%);
+}
+.black-keys > button:hover{
+    background: black;
+    background: linear-gradient(#5c5c5c, #353535 30%); 
+    cursor: pointer;
+}
+.black-keys > button:active{
+    box-shadow:  inset 0px 0px 0px 2px rgba(220, 220, 220, 0.2);
+    background: linear-gradient(#818181, #505050 30%); 
+    border-width: 0 8px 8px;
+}
+.white-keys > button:active{
+    background: linear-gradient(#ffffff, #ddd 25%);
+}
