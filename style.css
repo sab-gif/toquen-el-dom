@@ -136,7 +136,7 @@ header button{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:	#de892e;
+    background-color:#de892e;
     position: relative;
 }
 
@@ -271,7 +271,7 @@ footer{
 .piano-wrapper{
     align-self: center;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #de892e8c;
     display: flex;
     justify-content: center;
     border-bottom-left-radius: 5px;
