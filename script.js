@@ -34,14 +34,14 @@ keyC3.addEventListener("click", playNote()) */
 
 
 const keys  = document.querySelectorAll(".key"); //NodeList [] 
-console.log(keys);
+//console.log(keys);
 
 keys.forEach(key => {
     const note = key.getAttribute("data-note");
     const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
     key.addEventListener("mousedown", () =>{
         const start = performance.now()
-        console.log("mousedown", start);
+        //console.log("mousedown", start);
         audio.currentTime= 0;
         audio.playbackRate = 1;
         audio.play();
@@ -52,7 +52,7 @@ keys.forEach(key => {
             setTimeout(() => {
                 audio.pause()}, 500)
             const end = performance.now()
-            console.log("mouseout", end);
+            //console.log("mouseout", end);
         }        
     })
     key.addEventListener("mouseup", () => {
@@ -60,10 +60,41 @@ keys.forEach(key => {
             setTimeout(() => {
                 audio.pause()}, 500)
             const end2 = performance.now()
-            console.log("mouseup", end2);
+            //console.log("mouseup", end2);
         }  
     })
     audio.addEventListener('ended', () => {
         key.classList.remove('active');
     })
 })
+
+const pressedKeys = new Set();
+document.addEventListener("keydown", function(event){
+    const key = event.key.toLowerCase();
+    if (pressedKeys.has(key)){
+        return;
+    }
+    pressedKeys.add(key);
+    const keyElement = document.querySelector('.key[data-key="' + key + '"]');
+    if(!keyElement){
+        return;
+    }
+    const note = keyElement.getAttribute("data-note");
+    const audio = new Audio("assets/note-sounds/" + note + ".mp3");
+    audio.currentTime = 0;
+    audio.play();
+    keyElement.classList.add('active');
+    audio.addEventListener('ended', function(){
+        keyElement.classList.remove('active');
+    });
+});
+
+document.addEventListener("keyup", function(event){
+    const key = event.key.toLowerCase();
+    pressedKeys.delete(key);
+    const keyElement = document.querySelector('.key[data-key="' + key + '"]');
+    if (keyElement){
+        keyElement.classList.remove('active');
+    }
+});
+

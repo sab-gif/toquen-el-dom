@@ -34,7 +34,6 @@ a{
 }
 
 /* header*/
-
 header{
     position: fixed;
     display: flex;
@@ -61,7 +60,6 @@ header button{
 }
 
 /* main section intro */
-
 .intro{
     display: flex;
     flex-direction: column;
@@ -76,6 +74,7 @@ header button{
     color: white;
     height: 100dvh;
 }
+
 /* main section about-us */
 .about-us{
     display: flex;
@@ -103,8 +102,8 @@ header button{
     height: auto;
     border-radius: 10px;
 }
-/* main section select-instrument */
 
+/* main section select-instrument */
 .select-instrument{
     display: flex;
     flex-direction: column;
@@ -170,8 +169,8 @@ button p{
 .btn-xylophone{
     background-image: url(./assets/xylophone-play-button.jpg);
 }
-/* main section contact-us */
 
+/* main section contact-us */
 .contact-us{
     background-image: url(./assets/piano-teacher-contact-us.jpg);
     background-size: cover;
@@ -204,7 +203,6 @@ button p{
 }
 
 /* footer */
-
 footer{
     padding: 1em;
     display: flex;
@@ -294,7 +292,7 @@ footer{
     aspect-ratio: 1/0.89;
 }
 
-.white-keys > button {
+.white-keys button {
     width: calc(var(--width)/7);
     border: 1px solid #999;
     box-shadow: inset 0 0 8px #999999;
