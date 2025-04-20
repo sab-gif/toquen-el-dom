@@ -9,20 +9,29 @@
 }
 h1, h2, h3, h4, h5, h6{
     font-family: "Kanit";
+    text-align: center;
 }
+h1, h2{
+    color: white;
+    text-shadow: 0px 0px 0.5em black;
 
+}
 :root{
     --toalwidth: 80vw;
     --width:calc(var(--toalwidth)/3);
     --k15: calc(var(--width)/11.2);
     --k14: calc(var(--width)/12);
     --k13: calc(var(--width)/(168/13));
+    --orange: #ce621a;
+    --yellow: #de892e;
+    --green: #988054; 
+    --blue: #3d5150; 
+    --darkblue: #232e30;
 }
 
 body{
     display: flex;
     flex-direction: column;
-    background-color: #de892e8c;
 }
 main{
     display: flex;
@@ -38,13 +47,14 @@ header{
     position: fixed;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: rgba(240, 248, 255, 0.33);
     padding: 1em;
     top: 0;
-    text-shadow: 0px 0px 10px black;
+    text-shadow: 2em;
     background-color: rgba(255, 255, 255, 0.300);
-    width: 100%;
+    width: 100dvw;
     color: white;
     z-index: 10;
 }
@@ -54,62 +64,79 @@ header button{
     width: fit-content;
     height: fit-content;
     border-radius: 15px;
-    background-color: rgb(30, 136, 175);
+    background-color: var(--darkblue);
     border: none;
     padding: 1em;
 }
 header a:visited{
     color: white;
 }
+.main-index section{
+    padding: 3rem;
+}
 /* main section intro */
 .intro{
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    flex-grow: 1;
-    text-shadow: 0px 0px 10px black;
+    text-shadow: 0px 0px 0.5em black;
     text-align: center;
-    background-image: url("./assets/piano-intro-background.jpg");
-    background-size: cover;
-    background-position: center;
     color: white;
     height: 100dvh;
+}
+.intro::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("./assets/piano-intro-background.jpg");
+    filter: brightness(80%);
+    background-size: cover;
+    background-position: center;
+}
+.intro div{
+    align-self: center;
+}
+.intro h1{
+    font-size: 5em;
+}
+.intro p{
+    font-size: 2em;
+}
+.intro img{
+    position: relative;
+    top: 150px;
 }
 
 /* main section about-us */
 .about-us{
+    background-color: var(--orange);
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px;
-    gap: 30px;
+    flex-direction: column;
+    gap: 1em;
 }
-
-.about-text{
-    flex: 2; 
+.about-img-text{
     text-align: justify;
 }
-
-.about-text h2{
-    margin-bottom: 20px;
-}
-
-.about-img{
-    flex: 1;
-}
-
-.about-img img{
-    width: 100%;
+.about-us img{
+    float: right;
+    width: 40%;
+    min-width: 200px;
     height: auto;
     border-radius: 10px;
+    margin: 0 1em;
 }
 
 /* main section select-instrument */
 .select-instrument{
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    background-color: var(--green);
 }
 
 .try-play{
@@ -119,9 +146,10 @@ header a:visited{
 
 .instruments{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    gap: 1rem;
     justify-content: space-around;
-    padding-bottom: 50px;
 }
 
 .instruments button{
@@ -179,50 +207,44 @@ button p{
     background-color: transparent;
     height: 40vh;
     display: flex;
-    justify-content: center;
-    flex-direction: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    position: relative;
 }
 
 .text-visit-us{
     color: white;
-    max-width: 40%;
-    right: 50px;
-    display: flex;
-    position: relative;
-    align-items: flex-start;
-    justify-content: flex-start;   
+    text-shadow: 0px 0px 10px black; 
+    text-align: center;
 }
 
 .box-discover-rhythm{
     background-color: rgba(255, 255, 255, 0.722);
-    padding: 30px;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    padding: 1.5em;
     border-radius: 10px;
 }
 
 /* footer */
 footer{
-    padding: 1em;
+    padding: 1.5rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    background-color: var(--yellow);
 }
 
 .footer-title{
-    display: flex;
-    align-items: center;
+    align-self: center;
 }
 
 .footer-info{
+    align-self: center;
     display: flex;
-    align-items: center;
-    justify-content:flex-end;
     flex-direction: row;
-    gap: 2em;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .footer-contact{
@@ -248,6 +270,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    background-color: var(--blue);
 
 }
 .piano-title{
