@@ -73,11 +73,13 @@ keys.forEach(key => {
 const pressedKeys = new Set();
 document.addEventListener("keydown", function(event){
     const key = event.key.toLowerCase();
+    console.log(key)
     if (pressedKeys.has(key)){
         return;
     }
     pressedKeys.add(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
+    console.log(keyElement)
     if(!keyElement){
         return;
     }
