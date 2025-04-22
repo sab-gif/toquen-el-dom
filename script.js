@@ -1,8 +1,15 @@
 
 const keys  = document.querySelectorAll(".key"); //NodeList [] 
 
+const adjustVolume = (audio) => {
+    const volumeSlider = document.getElementById("volume-slider");
+    const volume = volumeSlider.value;
+    audio.volume = volume;
+}
+
 //Mouse or click
 const playNoteClick = (key, audio) => {
+    adjustVolume(audio);
     audio.currentTime= 0;
     audio.playbackRate = 1;
     audio.play();
@@ -31,6 +38,7 @@ keys.forEach(key => {
 const playNoteKeyboard = (keyElement) => {
     const note = keyElement.getAttribute("data-note");
     const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+    adjustVolume(audio);
     audio.currentTime = 0;
     audio.play();
     keyElement.classList.add('active');
