@@ -77,3 +77,20 @@ document.addEventListener("keyup", function(event){
     pauseNoteKeyboard(keyElement);
 });
 
+const keysCheckbox = document.getElementById("note-checkbox");
+
+const toggleKeys = () => {
+    for (const key of keys){
+        if (keysCheckbox.checked == true){
+            if (key.classList.contains('black')){
+                key.style.color = "white";
+            } else {
+                key.style.color = "black";
+            }
+        } else {
+            key.style.color = "transparent";
+        }
+    }
+}
+
+keysCheckbox.addEventListener("change", toggleKeys);
