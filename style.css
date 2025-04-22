@@ -429,7 +429,9 @@ footer{
 /* Style for switch controls */
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
-    .checkbox-wrapper-14 input[type=checkbox] {
+
+.checkbox-wrapper-14 input[type=checkbox] {
+    appearance: none;
     --active: var(--darkblue);
     --active-inner: #fff;
     --focus: 2px rgba(39, 94, 254, .3);
@@ -438,8 +440,8 @@ footer{
     --background: #fff;
     --disabled: #F6F8FF;
     --disabled-inner: #E1E6F9;
-/*     -webkit-appearance: none;
-    -moz-appearance: none; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
     height: 21px;
     outline: none;
     display: inline-block;
