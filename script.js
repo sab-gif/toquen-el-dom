@@ -28,7 +28,25 @@ keys.forEach(key => {
     const note = key.getAttribute("data-note");
     const keyboard = key.getAttribute("data-key");
     const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-    key.textContent = `${note}\n${keyboard.toUpperCase()}`;
+
+    //Letters in piano buttons
+    let keysContainer = document.createElement("span");
+    let notesContainer = document.createElement("span");
+    let lineBreak = document.createElement("br");
+    if (key.classList.contains('black')){
+        keysContainer.classList. add("black");
+        notesContainer.classList. add("black");
+    }
+    keysContainer.classList. add("keyText");
+    notesContainer.classList. add("noteText");
+    keysContainer.textContent = `${keyboard.toUpperCase()}`;
+    notesContainer.textContent = `${note}`;
+
+    key.appendChild(keysContainer);
+    key.appendChild(lineBreak);
+    key.appendChild(notesContainer);
+
+    //Click events to play note
     key.addEventListener("mousedown", () => playNoteClick(key, audio));
     key.addEventListener("mouseout", () => pauseNoteClick(key, audio));     
     key.addEventListener("mouseup", () => pauseNoteClick(key, audio));  
@@ -77,10 +95,30 @@ document.addEventListener("keyup", function(event){
     pauseNoteKeyboard(keyElement);
 });
 
-const keysCheckbox = document.getElementById("note-checkbox");
+const noteCheckbox = document.getElementById("note-checkbox");
+
+const toggleNotes = () => {
+    const keysText  = document.querySelectorAll(".noteText"); 
+    for (const key of keysText){
+        if (noteCheckbox.checked == true){
+            if (key.classList.contains('black')){
+                key.style.color = "white";
+            } else {
+                key.style.color = "black";
+            }
+        } else {
+            key.style.color = "transparent";
+        }
+    }
+}
+
+noteCheckbox.addEventListener("change", toggleNotes);
+
+const keysCheckbox = document.getElementById("letters-checkbox");
 
 const toggleKeys = () => {
-    for (const key of keys){
+    const keysText  = document.querySelectorAll(".keyText"); 
+    for (const key of keysText){
         if (keysCheckbox.checked == true){
             if (key.classList.contains('black')){
                 key.style.color = "white";

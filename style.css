@@ -183,13 +183,12 @@ header a:visited{
     position: relative;
 }
 
-button p{    
+.select-instrument button p{    
     background-color: #3d5150;
     width: fit-content;
     padding: 15px;
     border-radius: 15px;
 }
-
 .btn-piano{
     background-image: url(./assets/piano-play-button.jpg);
 }
@@ -327,13 +326,15 @@ footer{
     aspect-ratio: 1/0.89;
 }
 
+
 .keys button{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 0;
     display: flex;
-    align-items: end;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
     border-top: none;
     white-space: pre;
 }
