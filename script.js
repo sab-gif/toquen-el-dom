@@ -32,7 +32,7 @@ keyC3.addEventListener("click", playNote()) */
 
 
 
-
+//play music with mouse
 const keys  = document.querySelectorAll(".key"); //NodeList [] 
 //console.log(keys);
 
@@ -71,7 +71,7 @@ keys.forEach(key => {
       //  key.classList.remove('active');
    // })
 })
-
+//play music with keyboard
 const pressedKeys = new Set();
 document.addEventListener("keydown", function(event){
     const key = event.key.toLowerCase();
