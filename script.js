@@ -49,6 +49,7 @@ keys.forEach(key => {
     })
     key.addEventListener("mouseout", () => {
         if (!audio.paused) {
+            key.classList.remove('active')
             setTimeout(() => {
                 audio.pause()}, 500)
             const end = performance.now()
@@ -57,15 +58,16 @@ keys.forEach(key => {
     })
     key.addEventListener("mouseup", () => {
         if (!audio.paused) {
+            key.classList.remove('active');
             setTimeout(() => {
                 audio.pause()}, 500)
             const end2 = performance.now()
             //console.log("mouseup", end2);
         }  
     })
-    audio.addEventListener('ended', () => {
-        key.classList.remove('active');
-    })
+    //audio.addEventListener('pause', () => {
+      //  key.classList.remove('active');
+   // })
 })
 
 const pressedKeys = new Set();
@@ -75,12 +77,12 @@ document.addEventListener("keydown", function(event){
         return;
     }
     pressedKeys.add(key);
-    const keyElement = document.querySelector('.key[data-key="' + key + '"]');
+    const keyElement = document.querySelector(`.key[data-key="${key}"]`);
     if(!keyElement){
         return;
     }
     const note = keyElement.getAttribute("data-note");
-    const audio = new Audio("assets/note-sounds/" + note + ".mp3");
+    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
     audio.currentTime = 0;
     audio.play();
     keyElement.classList.add('active');
@@ -92,7 +94,7 @@ document.addEventListener("keydown", function(event){
 document.addEventListener("keyup", function(event){
     const key = event.key.toLowerCase();
     pressedKeys.delete(key);
-    const keyElement = document.querySelector('.key[data-key="' + key + '"]');
+    const keyElement = document.querySelector(`.key[data-key="${key}"]`);
     if (keyElement){
         keyElement.classList.remove('active');
     }

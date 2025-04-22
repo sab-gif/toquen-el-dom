@@ -309,7 +309,7 @@ footer{
 .piano-wrapper{
     align-self: center;
     position: relative;
-    background-color: #de892e8c;
+    background-color: var(--blue);
     display: flex;
     justify-content: center;
     border-bottom-left-radius: 5px;
@@ -386,11 +386,11 @@ footer{
     background: linear-gradient(#5c5c5c, #353535 30%); 
     cursor: pointer;
 }
-.black-keys button:active{
+.black-keys button.active{
     box-shadow:  inset 0px 0px 0px 2px rgba(220, 220, 220, 0.2);
     background: linear-gradient(#818181, #505050 30%); 
     border-width: 0 8px 8px;
 }
-.white-keys button:active{
+.white-keys button.active{
     background: linear-gradient(#ffffff, #ddd 25%);
 }
