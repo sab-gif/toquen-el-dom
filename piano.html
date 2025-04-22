@@ -34,18 +34,26 @@
     </header>
         <!-- main -->
     <main class="main-piano">
+        <div class="piano-info">
         <section class="piano-title">
             <h1>Piano</h1>
             <p>Play the keys to make some music</p>
         </section>
         <section class="piano-controls">
-            <label for="volume-slider">Volume</label>
-            <input id="volume-slider" type="range" min="0" max="1" value="0.5" step="any">
-            <label for="letters">Keyboard Letters</label>
-            <input id="letters-checkbox" type="checkbox" checked>
-            <label for="note">Piano Notes</label>
-            <input id="note-checkbox" type="checkbox" checked>
+            <div>
+                <label for="volume-slider">Volume</label>
+                <input id="volume-slider" type="range" min="0" max="1" value="0.5" step="any">
+            </div>
+            <div class="checkbox-wrapper-14">
+                <input id="letters-checkbox" type="checkbox" class="switch" checked>
+                <label for="letters">Keyboard Letters</label>
+            </div>
+            <div class="checkbox-wrapper-14">
+                <input id="note-checkbox" type="checkbox"  class="switch" checked>
+                <label for="note">Piano Notes</label>
+            </div>
         </section>
+        </div>
         <section class="piano">
         <div class="piano-wrapper">
             <div class="keys white-keys">
