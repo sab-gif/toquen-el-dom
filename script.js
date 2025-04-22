@@ -38,7 +38,9 @@ const keys  = document.querySelectorAll(".key"); //NodeList [] 
 
 keys.forEach(key => {
     const note = key.getAttribute("data-note");
+    const keyboard = key.getAttribute("data-key");
     const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+    key.textContent = `${note}\n${keyboard.toUpperCase()}`;
     key.addEventListener("mousedown", () =>{
         const start = performance.now()
         //console.log("mousedown", start);
@@ -73,11 +75,13 @@ keys.forEach(key => {
 const pressedKeys = new Set();
 document.addEventListener("keydown", function(event){
     const key = event.key.toLowerCase();
+    console.log(key)
     if (pressedKeys.has(key)){
         return;
     }
     pressedKeys.add(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
+    console.log(keyElement)
     if(!keyElement){
         return;
     }
