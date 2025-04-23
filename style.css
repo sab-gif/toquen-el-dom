@@ -195,7 +195,7 @@ header a:visited{
     position: relative;
 }
 
-.instruments p{    
+.instruments b{    
     background-color: var(--blue);
     width: fit-content;
     padding: 15px;
