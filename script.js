@@ -7,24 +7,51 @@ const adjustVolume = (audio) => {
     audio.volume = volume;
 }
 
+/* const getAudio = (key) => {
+    const note = key.getAttribute("data-note");
+    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+    return audio;
+} */
+
+//Variable to store the audio being played
+let audioPlayed = 0;
+
 //Mouse or click
 const playNote = (key) => {
     const note = key.getAttribute("data-note");
     const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+
+    audioPlayed = audio;
+    //console.log("new audio");
+
     adjustVolume(audio);
     audio.currentTime= 0;
     audio.playbackRate = 1;
+    let speed;
+    let jump = 0.111111;
     audio.play();
+
+    //Make long notes last more time
+    let interval = setInterval(() => {
+        speed = 1 - jump;
+        jump = Math.cbrt(jump);
+        audio.playbackRate = speed;
+        //console.log("speed " + speed + "audio " + audio.playbackRate)
+        if (speed<=0.22 || audio.paused || audio.ended){
+            clearInterval(interval);
+        } }, 500);
     key.classList.add('active');
+    //audio.addEventListener("pause", () => {console.log("audio paused")});
+
 }
 
-const pauseNote = (key) => {
-    const note = key.getAttribute("data-note");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-    key.classList.remove('active')
+const pauseNote = (key, audio) => {
+    //console.log("start pause " + audio.paused +" ended "+ audio.ended);
+    key.classList.remove('active');
     if (!audio.paused) {
         setTimeout(() => {
-            audio.pause()}, 500)
+            audio.muted = true;
+            audio.pause(); /* console.log(audio.paused) */}, 200)
     }
 }
 
@@ -56,9 +83,9 @@ const createText = (key) => {
 keys.forEach(key => {
     createText(key);
     //Click events to play note
-    key.addEventListener("mousedown", () => playNote(key));
-    key.addEventListener("mouseout", () => pauseNote(key));     
-    key.addEventListener("mouseup", () => pauseNote(key));  
+    key.addEventListener("mousedown", () => {/* console.log("one") */; playNote(key)});
+    key.addEventListener("mouseout", () => {/* console.log("two" ) */; pauseNote(key, audioPlayed)});     
+    key.addEventListener("mouseup", () => {/* console.log("three") */; pauseNote(key, audioPlayed)});  
 })
 
 const pressedKeys = new Set();
@@ -80,7 +107,7 @@ document.addEventListener("keyup", function(event){
     const key = event.key.toLowerCase();
     pressedKeys.delete(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
-    pauseNote(keyElement);
+    pauseNote(keyElement, audioPlayed);
 });
 
 //Switch function
