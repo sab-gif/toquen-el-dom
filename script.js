@@ -24,11 +24,7 @@ const pauseNoteClick = (key, audio) => {
     }
 }
 
-keys.forEach(key => {
-    const note = key.getAttribute("data-note");
-    const keyboard = key.getAttribute("data-key");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-
+const createText = (key, note, keyboard) => {
     //Letters in piano buttons
     let keysContainer = document.createElement("span");
     let notesContainer = document.createElement("span");
@@ -45,6 +41,14 @@ keys.forEach(key => {
     key.appendChild(keysContainer);
     key.appendChild(lineBreak);
     key.appendChild(notesContainer);
+}
+
+keys.forEach(key => {
+    const note = key.getAttribute("data-note");
+    const keyboard = key.getAttribute("data-key");
+    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+
+    createText(key, note, keyboard);
 
     //Click events to play note
     key.addEventListener("mousedown", () => playNoteClick(key, audio));
@@ -95,6 +99,7 @@ document.addEventListener("keyup", function(event){
     pauseNoteKeyboard(keyElement);
 });
 
+//Piano notes switch
 const noteCheckbox = document.getElementById("note-checkbox");
 
 const toggleNotes = () => {
@@ -114,6 +119,7 @@ const toggleNotes = () => {
 
 noteCheckbox.addEventListener("change", toggleNotes);
 
+//Keyboard letters switch
 const keysCheckbox = document.getElementById("letters-checkbox");
 
 const toggleKeys = () => {
