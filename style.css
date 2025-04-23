@@ -75,13 +75,14 @@ header{
     border-radius: 15px;
 }
 
-header button{
+.header-btns a{
     color: white;
     width: fit-content;
     height: fit-content;
     border-radius: 15px;
     background-color: var(--blue);
     border: none;
+    margin-right: 0.5em;
     padding: 1em;
 }
 
