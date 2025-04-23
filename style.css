@@ -195,11 +195,12 @@ header a:visited{
     position: relative;
 }
 
-.instruments b{    
+.instruments span{    
     background-color: var(--blue);
     width: fit-content;
     padding: 15px;
     border-radius: 15px;
+    font-weight: 600;
 }
 .btn-piano{
     background-image: url(./assets/piano-play-button.jpg);
