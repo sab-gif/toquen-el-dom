@@ -34,10 +34,26 @@
     </header>
         <!-- main -->
     <main class="main-piano">
+        <div class="piano-info">
         <section class="piano-title">
             <h1>Piano</h1>
             <p>Play the keys to make some music</p>
         </section>
+        <section class="piano-controls">
+            <div>
+                <label for="volume-slider">Volume</label>
+                <input id="volume-slider" type="range" min="0" max="1" value="0.5" step="any">
+            </div>
+            <div class="checkbox-wrapper-14">
+                <input id="letters-checkbox" type="checkbox" class="switch" checked>
+                <label for="letters">Keyboard Letters</label>
+            </div>
+            <div class="checkbox-wrapper-14">
+                <input id="note-checkbox" type="checkbox"  class="switch" checked>
+                <label for="note">Piano Notes</label>
+            </div>
+        </section>
+        </div>
         <section class="piano">
         <div class="piano-wrapper">
             <div class="keys white-keys">
@@ -50,11 +66,11 @@
                 <button class="key" data-note="B2" data-key="u"></button>
             </div>
             <div class="keys black-keys">
-                <button class="key" data-note="Db2" data-key="2"></button>
-                <button class="key" data-note="Eb2" data-key="3"></button>
-                <button class="key" data-note="Gb2" data-key="5"></button>
-                <button class="key" data-note="Ab2" data-key="6"></button>
-                <button class="key" data-note="Bb2" data-key="7"></button>
+                <button class="key black" data-note="Db2" data-key="2"></button>
+                <button class="key black" data-note="Eb2" data-key="3"></button>
+                <button class="key black" data-note="Gb2" data-key="5"></button>
+                <button class="key black" data-note="Ab2" data-key="6"></button>
+                <button class="key black" data-note="Bb2" data-key="7"></button>
             </div>
         </div>
         <div class="piano-wrapper">
@@ -68,11 +84,11 @@
                 <button class="key" data-note="B3" data-key="ç"></button>
             </div>
             <div class="keys black-keys">
-                <button class="key" data-note="Db3" data-key="i"></button>
-                <button class="key" data-note="Eb3" data-key="o"></button>
-                <button class="key" data-note="Gb3" data-key="p"></button>
-                <button class="key" data-note="Ab3" data-key="0"></button>
-                <button class="key" data-note="Bb3" data-key="+"></button>
+                <button class="key black" data-note="Db3" data-key="i"></button>
+                <button class="key black" data-note="Eb3" data-key="o"></button>
+                <button class="key black" data-note="Gb3" data-key="p"></button>
+                <button class="key black" data-note="Ab3" data-key="0"></button>
+                <button class="key black" data-note="Bb3" data-key="+"></button>
             </div>
         </div>
         <div class="piano-wrapper">
@@ -86,11 +102,11 @@
                 <button class="key" data-note="B4" data-key="m"></button>
             </div>
             <div class="keys black-keys">
-                <button class="key" data-note="Db4" data-key="a"></button>
-                <button class="key" data-note="Eb4" data-key="s"></button>
-                <button class="key" data-note="Gb4" data-key="d"></button>
-                <button class="key" data-note="Ab4" data-key="f"></button>
-                <button class="key" data-note="Bb4" data-key="g"></button>
+                <button class="key black" data-note="Db4" data-key="a"></button>
+                <button class="key black" data-note="Eb4" data-key="s"></button>
+                <button class="key black" data-note="Gb4" data-key="d"></button>
+                <button class="key black" data-note="Ab4" data-key="f"></button>
+                <button class="key black" data-note="Bb4" data-key="g"></button>
             </div>
         </div>
         </section>
