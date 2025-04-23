@@ -61,7 +61,6 @@ keys.forEach(key => {
     key.addEventListener("mouseup", () => pauseNote(key));  
 })
 
-
 const pressedKeys = new Set();
 
 document.addEventListener("keydown", function(event){
@@ -103,7 +102,6 @@ const toggleSwitch = (keysText, checkbox) => {
 const noteCheckbox = document.getElementById("note-checkbox");
 const notesText  = document.querySelectorAll(".noteText"); 
 noteCheckbox.addEventListener("change", () => toggleSwitch(notesText, noteCheckbox));
-
 
 //Keyboard letters switch
 const keysCheckbox = document.getElementById("letters-checkbox");
