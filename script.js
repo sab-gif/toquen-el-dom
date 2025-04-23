@@ -8,7 +8,9 @@ const adjustVolume = (audio) => {
 }
 
 //Mouse or click
-const playNoteClick = (key, audio) => {
+const playNote = (key) => {
+    const note = key.getAttribute("data-note");
+    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
     adjustVolume(audio);
     audio.currentTime= 0;
     audio.playbackRate = 1;
@@ -16,7 +18,9 @@ const playNoteClick = (key, audio) => {
     key.classList.add('active');
 }
 
-const pauseNoteClick = (key, audio) => {
+const pauseNote = (key) => {
+    const note = key.getAttribute("data-note");
+    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
     key.classList.remove('active')
     if (!audio.paused) {
         setTimeout(() => {
@@ -24,17 +28,23 @@ const pauseNoteClick = (key, audio) => {
     }
 }
 
-const createText = (key, note, keyboard) => {
+const createText = (key) => {
+    const note = key.getAttribute("data-note");
+    const keyboard = key.getAttribute("data-key");
     //Letters in piano buttons
     let keysContainer = document.createElement("span");
     let notesContainer = document.createElement("span");
     let lineBreak = document.createElement("br");
+
+    //add classes
     if (key.classList.contains('black')){
         keysContainer.classList. add("black");
         notesContainer.classList. add("black");
     }
     keysContainer.classList. add("keyText");
     notesContainer.classList. add("noteText");
+
+    //add content
     keysContainer.textContent = `${keyboard.toUpperCase()}`;
     notesContainer.textContent = `${note}`;
 
@@ -44,49 +54,24 @@ const createText = (key, note, keyboard) => {
 }
 
 keys.forEach(key => {
-    const note = key.getAttribute("data-note");
-    const keyboard = key.getAttribute("data-key");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-
-    createText(key, note, keyboard);
-
+    createText(key);
     //Click events to play note
-    key.addEventListener("mousedown", () => playNoteClick(key, audio));
-    key.addEventListener("mouseout", () => pauseNoteClick(key, audio));     
-    key.addEventListener("mouseup", () => pauseNoteClick(key, audio));  
+    key.addEventListener("mousedown", () => playNote(key));
+    key.addEventListener("mouseout", () => pauseNote(key));     
+    key.addEventListener("mouseup", () => pauseNote(key));  
 })
 
-//Keyboard keys
-const playNoteKeyboard = (keyElement) => {
-    const note = keyElement.getAttribute("data-note");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-    adjustVolume(audio);
-    audio.currentTime = 0;
-    audio.play();
-    keyElement.classList.add('active');
-}
-
-const pauseNoteKeyboard = (keyElement) => {
-    const note = keyElement.getAttribute("data-note");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-    keyElement.classList.remove('active');
-    if (!audio.paused) {
-        setTimeout(() => {
-            audio.pause()}, 500)
-    }
-}
 
 const pressedKeys = new Set();
 
 document.addEventListener("keydown", function(event){
     const key = event.key.toLowerCase();
-    console.log(key)
     if (pressedKeys.has(key)){
         return;
     }
     pressedKeys.add(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
-    playNoteKeyboard(keyElement);
+    playNote(keyElement);
     if(!keyElement){
         return;
     }
@@ -96,45 +81,31 @@ document.addEventListener("keyup", function(event){
     const key = event.key.toLowerCase();
     pressedKeys.delete(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
-    pauseNoteKeyboard(keyElement);
+    pauseNote(keyElement);
 });
+
+//Switch function
+const toggleSwitch = (keysText, checkbox) => {
+    for (const key of keysText){
+        if (checkbox.checked == true){
+            if (key.classList.contains('black')){
+                key.style.color = "white";
+            } else {
+                key.style.color = "black";
+            }
+        } else {
+            key.style.color = "transparent";
+        }
+    }
+}
 
 //Piano notes switch
 const noteCheckbox = document.getElementById("note-checkbox");
+const notesText  = document.querySelectorAll(".noteText"); 
+noteCheckbox.addEventListener("change", () => toggleSwitch(notesText, noteCheckbox));
 
-const toggleNotes = () => {
-    const keysText  = document.querySelectorAll(".noteText"); 
-    for (const key of keysText){
-        if (noteCheckbox.checked == true){
-            if (key.classList.contains('black')){
-                key.style.color = "white";
-            } else {
-                key.style.color = "black";
-            }
-        } else {
-            key.style.color = "transparent";
-        }
-    }
-}
-
-noteCheckbox.addEventListener("change", toggleNotes);
 
 //Keyboard letters switch
 const keysCheckbox = document.getElementById("letters-checkbox");
-
-const toggleKeys = () => {
-    const keysText  = document.querySelectorAll(".keyText"); 
-    for (const key of keysText){
-        if (keysCheckbox.checked == true){
-            if (key.classList.contains('black')){
-                key.style.color = "white";
-            } else {
-                key.style.color = "black";
-            }
-        } else {
-            key.style.color = "transparent";
-        }
-    }
-}
-
-keysCheckbox.addEventListener("change", toggleKeys);
+const keysText  = document.querySelectorAll(".keyText"); 
+keysCheckbox.addEventListener("change", () => toggleSwitch(keysText, keysCheckbox));

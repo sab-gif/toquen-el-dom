@@ -548,3 +548,15 @@ footer{
     box-sizing: inherit;
 }
 
+/* @media (max-width: 650px) {
+    section{
+        background-color: yellow;
+    }
+    .main-piano{
+        justify-content: start;
+        padding-top: 10vh;
+    }
+    .piano{
+        transform: rotate(90deg) translateX(180px);
+    }
+} */
