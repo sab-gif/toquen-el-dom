@@ -178,7 +178,7 @@ header a:visited{
     justify-content: space-around;
 }
 
-.instruments button{
+.instruments a{
     border-radius: 15px;
     border: none;
     padding: 0;
@@ -194,7 +194,7 @@ header a:visited{
     position: relative;
 }
 
-.select-instrument button p{    
+.instruments p{    
     background-color: var(--blue);
     width: fit-content;
     padding: 15px;
