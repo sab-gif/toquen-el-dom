@@ -54,7 +54,7 @@ button{
     cursor: pointer;
 }
 
-/* header*/
+/* header */
 header{
     position: fixed;
     display: flex;
@@ -64,9 +64,7 @@ header{
     align-items: center;
     padding: 1.5em;
     top: 0;
-    text-shadow: 2em;
     width: 100dvw;
-    color: white;
     z-index: 10;
 }
 
@@ -98,12 +96,9 @@ header nav{
     padding: 1em;
 }
 
-header a:visited{
-    color: white;
-}
-
+/* main */
 .main-index section{
-    padding: 3rem;
+    padding: 3em;
 }
 
 /* main section intro */
@@ -148,6 +143,7 @@ header a:visited{
 .intro img{
     position: relative;
     top: 150px;
+    height: 100px;
 }
 
 /* main section about-us */
@@ -155,7 +151,7 @@ header a:visited{
     background-color: var(--orange);
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
 }
 
 .about-img-text{
@@ -167,7 +163,7 @@ header a:visited{
     width: 40%;
     min-width: 200px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 0 1em;
 }
 
@@ -180,23 +176,24 @@ header a:visited{
 
 .try-play{
     text-align: center;
-    padding-bottom: 50px;
+    padding-bottom: 0.5em;
 }
 
 .instruments{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1em;
     justify-content: space-around;
+    padding: 2em;
 }
 
 .instruments a{
     border-radius: 15px;
     border: none;
     padding: 0;
-    height: 200px;
-    width: 200px;
+    height: 11em;
+    width: 11em;
     background-size: cover;
     background-position: center;
     color: white;
@@ -209,13 +206,13 @@ header a:visited{
 .instruments span{    
     background-color: var(--blue);
     width: fit-content;
-    padding: 15px;
+    padding: 1em;
     border-radius: 15px;
     font-weight: 600;
 }
 .btn-piano{
     background-image: url(./assets/piano-play-button.jpg);
-}
+}    
 
 .btn-drums{
     background-image: url(./assets/drums-play-button.jpg);
@@ -259,7 +256,7 @@ header a:visited{
 .box-discover-rhythm{
     background-color: rgba(255, 255, 255, 0.722);
     padding: 1.5em;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 /* footer */
@@ -300,11 +297,12 @@ footer{
     justify-content: space-between;
 }
 
-/* piano body, main*/
+/* piano body, main */
 .piano-body{
     background-color: var(--darkblue);
     justify-content: start;
 }
+
 .main-piano{
     height:auto;
     display: flex;
@@ -340,15 +338,15 @@ footer{
     padding: 1em;
 }
 
-/* piano section*/
+/* piano section */
 .piano{
-    display:flex;
+    display: flex;
     flex-direction: row;
     width: var(--totalwidth);
     justify-content: center;
 }
 
-/* piano wrapper*/
+/* piano wrapper */
 .piano-wrapper{
     align-self: center;
     position: relative;
@@ -360,7 +358,6 @@ footer{
     aspect-ratio: 168/150;
 }
 
-
 .keys button{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -370,7 +367,7 @@ footer{
     align-items: center;
     justify-content: end;
     border-top: none;
-    white-space: pre;
+    /*white-space: pre;*/
 }
 
 .white-keys{
@@ -579,10 +576,12 @@ footer{
     box-sizing: inherit;
 }
 
+/* responsive */
 @media (max-width: 480px) {
     html {
         font-size: 14px;
     }
+
     :root{
         --totalwidth: 90vh;
     }
@@ -591,23 +590,19 @@ footer{
         justify-content: start;
         height: fit-content;
     }
+
     .piano{
         margin-top: 100px;
         transform: rotate(90deg);
         transform-origin: 30% 110%;
         z-index: 100;
     }
+
     .piano::after{
         content: "";
         margin-right: 50px;
     }
-    .instruments a{
-        border-radius: 15px;
-        border: none;
-        padding: 0;
-        height: 150px;
-        width: 150px;
-    }
+   
     .piano-info{
         flex-direction: row;
     }
