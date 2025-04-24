@@ -28,14 +28,37 @@ The website acts as a showcase for the school, highlighting its legacy and acade
 
 ## Main views of the project
 
-![alt text](image.jpg)
+### Colour scheme
 
-Header
-Try to play our instruments + Come and be a part of our history
-Piano
+![Colour scheme](assets/images-readme/color-scheme.png) 
+
+The website uses a palette of autumn colours that fit the warm wooden colors of instruments. The colour palette was taken from [color-hex](https://www.color-hex.com/) website.
+
+### Typography
+
+Google Fonts was used, it was choosen Kanit for titles and Lexend for the rest of the website. It was chosen as it looked clean and modern.
+
+### Some views
+
+![Header](assets/images-readme/navbar.png) 
+![Main page](assets/images-readme/intro.png) 
+![Instruments](assets/images-readme/instruments.png)
+![Contact](assets/images-readme/contact.png) 
+![Piano](assets/images-readme/piano.png)  
 
 ## Features
 
+### Navigation bar in header
+
+This website is comprised of two pages, all of them are accessible from the navigation menu. The navigation bar includes links from the logo of the web to the Home page, and links to each of the two pages, Home, Piano and is identical in each page to allow easy navigation.
+
+The navigation bar is located in the upper right corner.
+
+This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
+
+Desktop nav bar
+
+![Navbar](assets/images-readme/navbar.png)
 
 ## Working environment
 
