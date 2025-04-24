@@ -2,7 +2,23 @@
 
 ## Index
 
-
+- [toquen-el-dom](#toquen-el-dom)
+  - [Index](#index)
+  - [About the project](#about-the-project)
+  - [Main views of the project](#main-views-of-the-project)
+  - [Features](#features)
+  - [Working environment](#working-environment)
+    - [Tools](#tools)
+    - [Methodologies](#methodologies)
+  - [Installation](#installation)
+    - [Techinical requirements](#techinical-requirements)
+    - [Download repository](#download-repository)
+    - [Clone repository](#clone-repository)
+    - [Execute with Docker](#execute-with-docker)
+    - [Techinical requirements](#techinical-requirements-1)
+  - [Preview](#preview)
+  - [Next steps](#next-steps)
+  - [Authors](#authors)
 
 ## About the project
 
@@ -25,11 +41,11 @@ Piano
 
 ### Tools
 
-- CSS3
-- HTML5
-- JavaScript
-- Visual Studio Code
-- Docker
+- CSS3 ![css icon](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- HTML5 ![html icon](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- JavaScript ![JavaScript icon](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+- Visual Studio Code ![Visual Studio Code icon](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+- Docker ![docker icon](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 
 ### Methodologies
 
