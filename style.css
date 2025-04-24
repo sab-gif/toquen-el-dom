@@ -20,9 +20,9 @@ h1, h2{
 :root{
     --toalwidth: 90vw;
     --width:calc(var(--toalwidth)/3);
-    --k15: calc(var(--width)/11.2);
-    --k14: calc(var(--width)/12);
-    --k13: calc(var(--width)/(168/13));
+    --k13: calc(var(--width)*13/168);
+    --k14: calc(var(--width)*14/168);
+    --k15: calc(var(--width)*15/168);
     --orange: #ce621a;
     --yellow: #de892e;
     --green: #988054; 
@@ -345,8 +345,7 @@ footer{
     justify-content: center;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: fit-content;
-    aspect-ratio: 1/0.89;
+    aspect-ratio: 168/150;
 }
 
 
@@ -367,7 +366,7 @@ footer{
     height: 100%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    aspect-ratio: 1/0.89;
+    aspect-ratio: 168/150;
 }
 
 .white-keys button{
@@ -389,7 +388,7 @@ footer{
 }
 
 .black-keys button{
-    width: calc(var(--width)/12);
+    width: var(--k14);
     height: calc(var(--width)/(168/90));;
     position: absolute;
     background: linear-gradient(#555, #000 30%); 
