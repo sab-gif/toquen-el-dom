@@ -16,10 +16,16 @@ h1, h2{
     color: white;
     text-shadow: 0px 0px 0.5em black;
 }
+h2{
+    font-size: 2rem;
+}
+.piano-body h1{
+    font-size: 2.5em;;
+}
 
 :root{
-    --toalwidth: 90vw;
-    --width:calc(var(--toalwidth)/3);
+    --totalwidth: 90vw;
+    --width:calc(var(--totalwidth)/3);
     --k15: calc(var(--width)/11.2);
     --k14: calc(var(--width)/12);
     --k13: calc(var(--width)/(168/13));
@@ -62,6 +68,10 @@ header{
     width: 100dvw;
     color: white;
     z-index: 10;
+}
+
+.header-piano{
+    position: sticky;
 }
 
 .logo{
@@ -290,18 +300,20 @@ footer{
     justify-content: space-between;
 }
 
-/* piano title*/
+/* piano body, main*/
+.piano-body{
+    background-color: var(--darkblue);
+    justify-content: start;
+}
 .main-piano{
-    height:100vh;
+    height:auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--darkblue);
 }
 
 .main-piano section{
-    padding: 1em;
     margin: 1em;
 }
 
@@ -325,6 +337,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    padding: 1em;
 }
 
 /* piano section*/
@@ -333,7 +346,6 @@ footer{
     flex-direction: row;
     width: var(--totalwidth);
     justify-content: center;
-    height: fit-content;
 }
 
 /* piano wrapper*/
@@ -573,14 +585,22 @@ footer{
         font-size: 14px;
     }
     :root{
-        --toalwidth: 60vh;
+        --totalwidth: 90vh;
     }
+
     .main-piano{
         justify-content: start;
-        padding-top: 10vh;
+        height: fit-content;
     }
     .piano{
-        transform: rotate(90deg) translateX(20vh);
+        margin-top: 100px;
+        transform: rotate(90deg);
+        transform-origin: 30% 110%;
+        z-index: 100;
+    }
+    .piano::after{
+        content: "";
+        margin-right: 50px;
     }
     .instruments a{
         border-radius: 15px;
