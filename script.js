@@ -45,7 +45,8 @@ const playNote = (key) => {
 
 }
 
-const pauseNote = (key, audio) => {
+const pauseNote = (key) => {
+    audio = audioPlayed;
     //console.log("start pause " + audio.paused +" ended "+ audio.ended);
     key.classList.remove('active');
     if (!audio.paused) {
@@ -84,8 +85,8 @@ keys.forEach(key => {
     createText(key);
     //Click events to play note
     key.addEventListener("mousedown", () => {/* console.log("one") */; playNote(key)});
-    key.addEventListener("mouseout", () => {/* console.log("two" ) */; pauseNote(key, audioPlayed)});     
-    key.addEventListener("mouseup", () => {/* console.log("three") */; pauseNote(key, audioPlayed)});  
+    key.addEventListener("mouseout", () => {/* console.log("two" ) */; pauseNote(key)});     
+    key.addEventListener("mouseup", () => {/* console.log("three") */; pauseNote(key)});  
 })
 
 const pressedKeys = new Set();
@@ -107,7 +108,7 @@ document.addEventListener("keyup", function(event){
     const key = event.key.toLowerCase();
     pressedKeys.delete(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
-    pauseNote(keyElement, audioPlayed);
+    pauseNote(keyElement);
 });
 
 //Switch function
