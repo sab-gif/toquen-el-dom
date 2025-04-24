@@ -1,96 +1,73 @@
+/* ----- Sound and key animation ----- */
 
+//Select elements from HTML
 const keys  = document.querySelectorAll(".key"); //NodeList [] 
-
-const adjustVolume = (audio) => {
-    const volumeSlider = document.getElementById("volume-slider");
-    const volume = volumeSlider.value;
-    audio.volume = volume;
-}
-
-/* const getAudio = (key) => {
-    const note = key.getAttribute("data-note");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
-    return audio;
-} */
+const volumeSlider = document.getElementById("volume-slider");
 
 //Variable to store the audio being played
 let audioPlayed = 0;
 
-//Mouse or click
+//Play function
 const playNote = (key) => {
+
+    //get the audio
     const note = key.getAttribute("data-note");
     const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
 
+    //store audio in variable for pause
     audioPlayed = audio;
-    //console.log("new audio");
 
-    adjustVolume(audio);
+    //adjust audio properties
+    audio.volume = volumeSlider.value;
     audio.currentTime= 0;
     audio.playbackRate = 1;
-    let speed;
-    let jump = 0.111111;
+
     audio.play();
 
     //Make long notes last more time
+    let speed;
+    let jump = 0.111111;
     let interval = setInterval(() => {
         speed = 1 - jump;
         jump = Math.cbrt(jump);
         audio.playbackRate = speed;
-        //console.log("speed " + speed + "audio " + audio.playbackRate)
+        //stop interval if audio stops
         if (speed<=0.22 || audio.paused || audio.ended){
             clearInterval(interval);
         } }, 500);
-    key.classList.add('active');
-    //audio.addEventListener("pause", () => {console.log("audio paused")});
 
+    //add class for visual response
+    key.classList.add('active');
 }
 
+//Pause function
 const pauseNote = (key) => {
+
+    //select audio from variable
     audio = audioPlayed;
-    //console.log("start pause " + audio.paused +" ended "+ audio.ended);
+
+    //remove class for visual response
     key.classList.remove('active');
+
+    //pause after timeout
     if (!audio.paused) {
         setTimeout(() => {
             audio.muted = true;
-            audio.pause(); /* console.log(audio.paused) */}, 200)
+            audio.pause();}, 200)
     }
 }
 
-const createText = (key) => {
-    const note = key.getAttribute("data-note");
-    const keyboard = key.getAttribute("data-key");
-    //Letters in piano buttons
-    let keysContainer = document.createElement("span");
-    let notesContainer = document.createElement("span");
-    let lineBreak = document.createElement("br");
-
-    //add classes
-    if (key.classList.contains('black')){
-        keysContainer.classList. add("black");
-        notesContainer.classList. add("black");
-    }
-    keysContainer.classList. add("keyText");
-    notesContainer.classList. add("noteText");
-
-    //add content
-    keysContainer.textContent = `${keyboard.toUpperCase()}`;
-    notesContainer.textContent = `${note}`;
-
-    key.appendChild(keysContainer);
-    key.appendChild(lineBreak);
-    key.appendChild(notesContainer);
-}
-
+//Click events in each button
 keys.forEach(key => {
-    createText(key);
-    //Click events to play note
-    key.addEventListener("mousedown", () => {/* console.log("one") */; playNote(key)});
-    key.addEventListener("mouseout", () => {/* console.log("two" ) */; pauseNote(key)});     
-    key.addEventListener("mouseup", () => {/* console.log("three") */; pauseNote(key)});  
+    key.addEventListener("mousedown", () => {playNote(key)});
+    key.addEventListener("mouseout", () => {pauseNote(key)});     
+    key.addEventListener("mouseup", () => {pauseNote(key)});  
 })
 
+//Variable to store pressed keyboard keys
 const pressedKeys = new Set();
 
+//Keyboard events in the document
 document.addEventListener("keydown", function(event){
     const key = event.key.toLowerCase();
     if (pressedKeys.has(key)){
@@ -110,6 +87,42 @@ document.addEventListener("keyup", function(event){
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
     pauseNote(keyElement);
 });
+
+/* ----- Letterrs and keyboard text ----- */
+
+//add text to buttons function
+const createText = (key) => {
+    
+    //get the text content
+    const note = key.getAttribute("data-note");
+    const keyboard = key.getAttribute("data-key");
+
+    //letters in piano buttons
+    let keysContainer = document.createElement("span");
+    let notesContainer = document.createElement("span");
+    let lineBreak = document.createElement("br");
+
+    //add classes
+    if (key.classList.contains('black')){
+        keysContainer.classList. add("black");
+        notesContainer.classList. add("black");
+    }
+    keysContainer.classList. add("keyText");
+    notesContainer.classList. add("noteText");
+
+    //add content
+    keysContainer.textContent = `${keyboard.toUpperCase()}`;
+    notesContainer.textContent = `${note}`;
+
+    //move inside the button
+    key.appendChild(keysContainer);
+    key.appendChild(lineBreak);
+    key.appendChild(notesContainer);
+}
+
+keys.forEach(key => {
+    createText(key);
+})
 
 //Switch function
 const toggleSwitch = (keysText, checkbox) => {
