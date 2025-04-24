@@ -34,7 +34,7 @@ const playNote = (key) => {
         //stop interval if audio stops
         if (speed<=0.22 || audio.paused || audio.ended){
             clearInterval(interval);
-        } }, 500);
+        } }, 100);
 
     //add class for visual response
     key.classList.add('active');
