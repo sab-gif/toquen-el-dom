@@ -44,7 +44,7 @@ const playNote = (key) => {
 const pauseNote = (key) => {
 
     //select audio from variable
-    audio = audioPlayed;
+    let audio = audioPlayed;
 
     //remove class for visual response
     key.classList.remove('active');
