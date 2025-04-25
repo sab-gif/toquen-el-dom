@@ -48,6 +48,12 @@ Google Fonts was used, it was choosen Kanit for titles and Lexend for the rest o
 
 ## Features
 
+Toquen el DOM offers a warm, modern, and accessible website featuring:
+· A clean, autumn-inspired desing refleting the music school's identity.
+· Easy navegation with a persistent menu linking to Home page and virtual piano.
+· An interactive virtual paino playable via mouse or keyboard with realistic sounds.
+· Respnsive layout for seamless use on desktop and mobile devices.
+
 ### Navigation bar in header
 
 This website is comprised of two pages, all of them are accessible from the navigation menu. The navigation bar includes links from the logo of the web to the Home page, and links to each of the two pages, Home, Piano and is identical in each page to allow easy navigation.
