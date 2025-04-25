@@ -82,7 +82,6 @@ Desktop nav bar
 
 ## Installation
 
-### Techinical requirements
 
 ### Download repository
 1. Download the ZIP from GitHub which contains all required files.
@@ -124,12 +123,10 @@ docker run -p 8080:80 -name <image-name> <container-name>
 
 > [Open the port](http://127.0.0.1:8080/)
 
-### Techinical requirements
-
-<!-- <details><summary>Toggle me!</summary>Peek a boo!</details> -->
 
 ## Preview
 
+![Piano video](assets/images-readme/piano-preview.mp4)
 
 
 
