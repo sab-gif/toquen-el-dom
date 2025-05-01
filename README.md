@@ -110,7 +110,8 @@ docker run -p 8080:80 -name <image-name> <container-name>
 
 ## 📹 Preview
 
-<video alt='Piano video' src='./assets/images-videos-readme/piano-preview.mp4' type="video/mp4"></video>
+
+https://github.com/user-attachments/assets/2a611c55-309c-401e-aa8b-57395ca10cfd
 
 
 ## 🚀  Next steps
