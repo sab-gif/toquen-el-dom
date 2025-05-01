@@ -1,54 +1,40 @@
-# toquen-el-dom
+# Toquen el DOM
 
-## Index
+## 🗂️ Index
 
-- [toquen-el-dom](#toquen-el-dom)
-  - [Index](#index)
-  - [About the project](#about-the-project)
-  - [Main views of the project](#main-views-of-the-project)
-    - [Colour scheme](#colour-scheme)
-    - [Typography](#typography)
-    - [Some views](#some-views)
-  - [Features](#features)
+- [Toquen el DOM](#toquen-el-dom)
+  - [🗂️ Index](#️-index)
+  - [🎹 About the project](#-about-the-project)
+  - [🖼️ Main views](#️-main-views)
+  - [🎛️ Features](#️-features)
     - [Navigation bar in header](#navigation-bar-in-header)
-  - [Working environment](#working-environment)
+  - [🛠️ Working environment](#️-working-environment)
     - [Tools](#tools)
     - [Methodologies](#methodologies)
-  - [Installation](#installation)
+  - [💻 Installation](#-installation)
     - [Download repository](#download-repository)
     - [Clone repository](#clone-repository)
     - [Execute with Docker](#execute-with-docker)
-  - [Preview](#preview)
-  - [Next steps](#next-steps)
-  - [Authors](#authors)
+  - [📹 Preview](#-preview)
+  - [🚀  Next steps](#--next-steps)
+  - [👥 Authors](#-authors)
 
-## About the project
+## 🎹 About the project
 
 Toquen el DOM ("Play the DOM") is the interactive website for Escola de Música Benimaclet, a music school with over 35 years of history in Valencia, Spain. This project blends the school’s educational ethos with a playful experience: a virtual piano that users can play directly in their browser, using either their mouse or computer keyboard.
 
 The website acts as a showcase for the school, highlighting its legacy and academic programs, while inviting visitors of all ages to explore music in an intuitive way. Perfect for prospective students, families, or music enthusiasts, it combines accessible design, interactivity, and a passion for music education
 
-## Main views of the project
+## 🖼️ Main views
 
-### Colour scheme
+<p align="center">Homepage<br>
+<img alt= "Intro view" src="./assets/images-videos-readme/intro.png" width = 400><br>About us<br>
+<img alt= "About us" src="./assets/images-videos-readme/about-us.png" width = 400><br>Intruments section<br>
+<img alt= "Intruments section view" src="./assets/images-videos-readme/instruments.png" width = 400><br>Contact section<br>
+<img alt= "Contact section view" src="./assets/images-videos-readme/contact.png" width = 400><br>Piano page<br>
+<img alt= "Piano page view" src="./assets/images-videos-readme/piano.png" width = 400> </p>
 
-![Colour scheme](assets/images-videos-readme/color-scheme.png) 
-
-The website uses a palette of autumn colours that fit the warm wooden colors of instruments. The colour palette was taken from [color-hex](https://www.color-hex.com/) website.
-
-### Typography
-
-Google Fonts was used, it was choosen Kanit for titles and Lexend for the rest of the website. It was chosen as it looked clean and modern.
-
-### Some views
-
-![Header](assets/images-videos-readme/navbar.png) 
-![Main page](assets/images-videos-readme/intro.png) 
-![Instruments](assets/images-videos-readme/instruments.png)
-![Contact](assets/images-videos-readme/contact.png) 
-![Piano](assets/images-videos-readme/piano.png)  
-
-## Features
+## 🎛️ Features
 
 Toquen el DOM offers a warm, modern, and accessible website featuring:
 · A clean, autumn-inspired desing refleting the music school's identity.
@@ -64,11 +50,7 @@ The navigation bar is located in the upper right corner.
 
 This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
 
-Desktop nav bar
-
-![Navbar](assets/images-videos-readme/navbar.png)
-
-## Working environment
+## 🛠️ Working environment
 
 ### Tools
 
@@ -82,7 +64,7 @@ Desktop nav bar
 
 - GitFlow
 
-## Installation
+## 💻 Installation
 
 
 ### Download repository
@@ -126,19 +108,19 @@ docker run -p 8080:80 -name <image-name> <container-name>
 > [Open the port](http://127.0.0.1:8080/)
 
 
-## Preview
+## 📹 Preview
 
-<video alt="Piano video" src="./assets/images-videos-readme/piano-preview.mp4"></video>
+<video alt='Piano video' src='./assets/images-videos-readme/piano-preview.mp4' type="video/mp4"></video>
 
 
-## Next steps
+## 🚀  Next steps
 
 1. Add more instruments
 2. Add tutorials
 3. Add a contact form
 4. Add social media links
 
-## Authors
+## 👥 Authors
 
 - [Iris Sánchez](https://github.com/isanort)
 - [Judit](https://github.com/J-uds)
