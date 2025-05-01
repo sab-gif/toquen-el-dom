@@ -22,18 +22,21 @@ document.addEventListener("keydown", function(event){
     if (pressedKeys.has(key)){
         return;
     }
-    pressedKeys.add(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
-    playNote(keyElement);
     if(!keyElement){
         return;
     }
+    pressedKeys.add(key);
+    playNote(keyElement);
 });
 
 document.addEventListener("keyup", function(event){
     const key = event.key.toLowerCase();
-    pressedKeys.delete(key);
     const keyElement = document.querySelector(`.key[data-key="${key}"]`);
+    if(!keyElement){
+        return;
+    }
+    pressedKeys.delete(key);
     pauseNote(keyElement);
 });
 
