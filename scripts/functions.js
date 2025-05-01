@@ -4,10 +4,9 @@ const volumeSlider = document.getElementById("volume-slider");
 const audiosPlayed = new Set();
 
 export const playNote = (key) => {
-    const note = key.getAttribute("data-note");
+    const note = key.dataset.note;
     const audio = new Audio(`../assets/note-sounds/${note}.mp3`);
 
-    //store audio in variable for pause
     audiosPlayed.add(audio);
     audio.volume = volumeSlider.value;
     audio.currentTime = 0;
@@ -29,25 +28,25 @@ export const playNote = (key) => {
 }
 
 export const pauseNote = (key) => {
-    let audioToPause
+    let audioToPause;
     audiosPlayed.forEach(audio => {
         if (audio.src.includes(key.dataset.note)){
             audioToPause = audio;
+            if (!audioToPause.paused) {
+                key.classList.remove('active');
+                setTimeout(() => {
+                    audioToPause.muted = true;
+                    audioToPause.pause();}, 200);
+            }
         }
-        });
-    key.classList.remove('active');
-    if (!audioToPause.paused) {
-        setTimeout(() => {
-            audioToPause.muted = true;
-            audioToPause.pause();}, 200)
-    }
+    });
 }
 
 /* ----- Letterrs and keyboard text ----- */
 
 export const createText = (key) => {
-    const note = key.getAttribute("data-note");
-    const keyboard = key.getAttribute("data-key");
+    const note = key.dataset.note;
+    const keyboard = key.dataset.key;
     let keysContainer = document.createElement("span");
     let notesContainer = document.createElement("span");
     let lineBreak = document.createElement("br");
