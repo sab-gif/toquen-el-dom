@@ -5,7 +5,7 @@
 - [Toquen el DOM](#toquen-el-dom)
   - [🗂️ Index](#️-index)
   - [🎹 About the project](#-about-the-project)
-  - [🖼️ Main views of the project](#️-main-views-of-the-project)
+  - [🖼️ Main views](#️-main-views)
   - [🎛️ Features](#️-features)
     - [Navigation bar in header](#navigation-bar-in-header)
   - [🛠️ Working environment](#️-working-environment)
@@ -25,13 +25,14 @@ Toquen el DOM ("Play the DOM") is the interactive website for Escola de Música 
 
 The website acts as a showcase for the school, highlighting its legacy and academic programs, while inviting visitors of all ages to explore music in an intuitive way. Perfect for prospective students, families, or music enthusiasts, it combines accessible design, interactivity, and a passion for music education
 
-## 🖼️ Main views of the project
+## 🖼️ Main views
 
-![Header](assets/images-videos-readme/navbar.png) 
-![Main page](assets/images-videos-readme/intro.png) 
-![Instruments](assets/images-videos-readme/instruments.png)
-![Contact](assets/images-videos-readme/contact.png) 
-![Piano](assets/images-videos-readme/piano.png)  
+<p align="center">Homepage<br>
+<img alt= "Intro view" src="./assets/images-videos-readme/intro.png" width = 400><br>About us<br>
+<img alt= "About us" src="./assets/images-videos-readme/about-us.png" width = 400><br>Intruments section<br>
+<img alt= "Intruments section view" src="./assets/images-videos-readme/instruments.png" width = 400><br>Contact section<br>
+<img alt= "Contact section view" src="./assets/images-videos-readme/contact.png" width = 400><br>Piano page<br>
+<img alt= "Piano page view" src="./assets/images-videos-readme/piano.png" width = 400> </p>
 
 ## 🎛️ Features
 
@@ -48,10 +49,6 @@ This website is comprised of two pages, all of them are accessible from the navi
 The navigation bar is located in the upper right corner.
 
 This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
-
-Desktop nav bar
-
-![Navbar](assets/images-videos-readme/navbar.png)
 
 ## 🛠️ Working environment
 
@@ -113,7 +110,7 @@ docker run -p 8080:80 -name <image-name> <container-name>
 
 ## 📹 Preview
 
-<video alt="Piano video" src="./assets/images-videos-readme/piano-preview.mp4"></video>
+<video alt='Piano video' src='./assets/images-videos-readme/piano-preview.mp4' type="video/mp4"></video>
 
 
 ## 🚀  Next steps
