@@ -32,7 +32,7 @@ The website acts as a showcase for the school, highlighting its legacy and acade
 
 ### Colour scheme
 
-![Colour scheme](assets/images-readme/color-scheme.png) 
+![Colour scheme](assets/images-videos-readme/color-scheme.png) 
 
 The website uses a palette of autumn colours that fit the warm wooden colors of instruments. The colour palette was taken from [color-hex](https://www.color-hex.com/) website.
 
@@ -42,11 +42,11 @@ Google Fonts was used, it was choosen Kanit for titles and Lexend for the rest o
 
 ### Some views
 
-![Header](assets/images-readme/navbar.png) 
-![Main page](assets/images-readme/intro.png) 
-![Instruments](assets/images-readme/instruments.png)
-![Contact](assets/images-readme/contact.png) 
-![Piano](assets/images-readme/piano.png)  
+![Header](assets/images-videos-readme/navbar.png) 
+![Main page](assets/images-videos-readme/intro.png) 
+![Instruments](assets/images-videos-readme/instruments.png)
+![Contact](assets/images-videos-readme/contact.png) 
+![Piano](assets/images-videos-readme/piano.png)  
 
 ## Features
 
@@ -66,7 +66,7 @@ This section will allow the user to easily navigate from page to page across all
 
 Desktop nav bar
 
-![Navbar](assets/images-readme/navbar.png)
+![Navbar](assets/images-videos-readme/navbar.png)
 
 ## Working environment
 
@@ -128,8 +128,7 @@ docker run -p 8080:80 -name <image-name> <container-name>
 
 ## Preview
 
-![Piano video](assets/images-readme/piano-preview.mp4)
-
+<video alt="Piano video" src="assets/images-videos-readme/piano-preview.mp4" ></video>
 
 
 ## Next steps
