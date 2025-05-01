@@ -12,7 +12,7 @@ const playNote = (key) => {
 
     //get the audio
     const note = key.getAttribute("data-note");
-    const audio = new Audio(`./assets/note-sounds/${note}.mp3`);
+    const audio = new Audio(`../assets/note-sounds/${note}.mp3`);
 
     //store audio in variable for pause
     audioPlayed = audio;
