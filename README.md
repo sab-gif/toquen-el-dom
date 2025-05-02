@@ -8,6 +8,7 @@
   - [🖼️ Main views](#️-main-views)
   - [🎛️ Features](#️-features)
     - [Navigation bar in header](#navigation-bar-in-header)
+  - [📊 Webflow diagram](#-webflow-diagram)
   - [🛠️ Working environment](#️-working-environment)
     - [Tools](#tools)
     - [Methodologies](#methodologies)
@@ -28,11 +29,11 @@ The website acts as a showcase for the school, highlighting its legacy and acade
 ## 🖼️ Main views
 
 <p align="center">Homepage<br>
-<img alt= "Intro view" src="./assets/images-videos-readme/intro.png" width = 400><br>About us<br>
-<img alt= "About us" src="./assets/images-videos-readme/about-us.png" width = 400><br>Intruments section<br>
-<img alt= "Intruments section view" src="./assets/images-videos-readme/instruments.png" width = 400><br>Contact section<br>
-<img alt= "Contact section view" src="./assets/images-videos-readme/contact.png" width = 400><br>Piano page<br>
-<img alt= "Piano page view" src="./assets/images-videos-readme/piano.png" width = 400> </p>
+<img alt= "Intro view" src="./assets/images-readme/intro.png" width = 400><br>About us<br>
+<img alt= "About us" src="./assets/images-readme/about-us.png" width = 400><br>Intruments section<br>
+<img alt= "Intruments section view" src="./assets/images-readme/instruments.png" width = 400><br>Contact section<br>
+<img alt= "Contact section view" src="./assets/images-readme/contact.png" width = 400><br>Piano page<br>
+<img alt= "Piano page view" src="./assets/images-readme/piano.png" width = 400> </p>
 
 ## 🎛️ Features
 
@@ -49,6 +50,11 @@ This website is comprised of two pages, all of them are accessible from the navi
 The navigation bar is located in the upper right corner.
 
 This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
+
+## 📊 Webflow diagram
+
+<p align="center">
+<img alt= "Webflow diagram" src="./assets/images-readme/webflow-diagram.jpg" width= 600></p>
 
 ## 🛠️ Working environment
 
