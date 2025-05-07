@@ -65,14 +65,8 @@ export const createText = (key) => {
 
 export const toggleSwitch = (keysText, checkbox) => {
     for (const key of keysText){
-        if (checkbox.checked == true){
-            if (key.classList.contains('black')){
-                key.style.color = "white";
-            } else {
-                key.style.color = "black";
-            }
-        } else {
-            key.style.color = "transparent";
-        }
+        checkbox.checked ?
+            (key.classList.contains('black') ? key.style.color = "white" : key.style.color = "black")
+            : key.style.color = "transparent";
     }
 }
