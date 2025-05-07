@@ -51,11 +51,11 @@ export const createText = (key) => {
     let notesContainer = document.createElement("span");
     let lineBreak = document.createElement("br");
     if (key.classList.contains('black')){
-        keysContainer.classList. add("black");
-        notesContainer.classList. add("black");
+        keysContainer.classList.add("black");
+        notesContainer.classList.add("black");
     }
-    keysContainer.classList. add("keyText");
-    notesContainer.classList. add("noteText");
+    keysContainer.classList.add("keyText");
+    notesContainer.classList.add("noteText");
     keysContainer.textContent = `${keyboard.toUpperCase()}`;
     notesContainer.textContent = `${note}`;
     key.appendChild(keysContainer);
