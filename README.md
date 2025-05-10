@@ -8,7 +8,9 @@
   - [🖼️ Main views](#️-main-views)
   - [🎛️ Features](#️-features)
     - [Navigation bar in header](#navigation-bar-in-header)
-  - [📊 Webflow diagram](#-webflow-diagram)
+  - [📊 Diagrams](#-diagrams)
+      - [Web flow](#web-flow)
+      - [User flow](#user-flow)
   - [🛠️ Working environment](#️-working-environment)
     - [Tools](#tools)
     - [Methodologies](#methodologies)
@@ -51,10 +53,15 @@ The navigation bar is located in the upper right corner.
 
 This section will allow the user to easily navigate from page to page across all devices without having to revert back to the previous page via the ‘back’ button. 
 
-## 📊 Webflow diagram
+## 📊 Diagrams
 
+#### Web flow
 <p align="center">
-<img alt= "Webflow diagram" src="./assets/images-readme/webflow-diagram.jpg" width= 600></p>
+<img alt= "Webflow diagram" src="./assets/images-readme/web-flow-diagram.jpg" width= 600></p>
+
+#### User flow
+<p align="center">
+<img alt= "Webflow diagram" src="./assets/images-readme/user-flow-diagram.jpg" width= 600></p>
 
 ## 🛠️ Working environment
 
@@ -71,7 +78,6 @@ This section will allow the user to easily navigate from page to page across all
 - GitFlow
 
 ## 💻 Installation
-
 
 ### Download repository
 1. Download the ZIP from GitHub which contains all required files.
@@ -113,12 +119,9 @@ docker run -p 8080:80 -name <image-name> <container-name>
 
 > [Open the port](http://127.0.0.1:8080/)
 
-
 ## 📹 Preview
 
-
 https://github.com/user-attachments/assets/2a611c55-309c-401e-aa8b-57395ca10cfd
-
 
 ## 🚀  Next steps
 
