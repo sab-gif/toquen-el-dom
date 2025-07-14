@@ -3,30 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Music school. Learn how to play instruments from your computer">
+    <meta name="keywords" content="music school, play instrument, music, school, instruments, learn, play">
+    <title>Toquen el DOM</title>
+    <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./public/site.webmanifest">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/common-styles.css">
 </head>
 <body>
-    <!-- First slide -->
+    <!-- header -->
     <header>
-        <div>
-            <h3>Toquen el DOM</h3>
-        </div>
+        <a href="./index.html">
+            <img class="logo" src="./assets/images-header/toqueneldom-logo.png" alt="logo">
+        </a>
         <nav class="header-btns">
-            <button>
-                Quienes somos
-            </button>
-            <button>
-                Prueba a tocar
-            </button>
+            <a href="#about-us">
+                About us
+            </a>
+            <a href="./pages/piano.html">
+                Play a piano
+            </a>
         </nav>
     </header>
-    
-    <!-- Second slide -->
-    
-    <!-- Third slide -->
-    
-    <!-- Forth slide -->
-    
+    <!-- main -->
+    <main class="main-index">
+    <!-- Intro -->
+        <section class="intro">
+            <div>
+                <h1>Music School</h1>
+                <p>Music is to the soul what sport is to the body</p>
+            </div>
+            <img src="./assets/images-index/arrow-icon.png" alt="arrow-icon">
+        </section>
+    <!-- About us -->
+        <section id="about-us" class="about-us">
+            <h2>About us</h2>
+            <div class="about-img-text">
+                <img src="./assets/images-index/piano-kid.jpg" alt="Child playing piano">
+                <p>
+                    Since 1986, we have been part of the cultural and musical life 
+                    of Benimaclet. Our school is a space dedicated to training, creativity,
+                    and passion for music, where generation of students hace discovered their artistic potencial in a
+                    welcoming, family-like enviroment.
+                </p>
+                <br>
+                <p>
+                    With our three decades of experience, we offer classes for all ages and levels, from beginner to advanced,
+                    in instruments like piano, guitar, voilin, drums, wind instruments, and voice, as well as workshops
+                    in harmony, music theory, and choral and instrumental groups. Our team of profesional musicians with a
+                    strong teaching background adapts to the needs and motivation of each student, encourage both technical
+                    learning and enjoyment of music. 
+                </p>
+                <br>
+                <p>
+                    In addition to academic training we organize concerts, auditions, and communitiy activities that enrich the life
+                    of the neighbothood, keeping alive the musical lagacy that define us. At Benimaclet Music school, we don't just
+                    teach notes-we nuture emotions, connections, and a tradition that has lasted for nearly 40 years.
+                </p>
+            </div>
+        </section>
+    <!-- Select instrument -->
+        <section class="select-instrument">
+            <h2 class="try-play">Try to play our instruments online</h2>
+            <div class="instruments">
+                <a href="./piano.html" class="btn-piano">
+                    <span>PIANO</span>
+                </a>
+                <a href="#" class="btn-drums">
+                    <img src="./assets/images-index/coming-soon.png" class="overlay" alt="coming soon">
+                    <span>DRUMS</span>
+                </a>
+                <a href="#" class="btn-xylophone">
+                    <img src="./assets/images-index/coming-soon.png" class="overlay" alt="coming soon">
+                    <span>XYLOPHONE</span>
+                </a>
+            </div>
+        </section> 
+    <!-- Contact us -->
+        <section class="contact-us">
+            <h2 class="text-visit-us">Come and be a part of our history!</h2>
+            <div class="box-discover-rhythm">
+            <h4>Discover your rhythm with us!</h4>
+                <ul>
+                    <li>Try a free introductory class</li>
+                    <li>Join immersive music workshops</li>
+                    <li>Attend our community events</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+            <h3 class="footer-title">Toquen el DOM</h3>
+            <div class="footer-info">
+                <div class="footer-contact">
+                    <h5>Our contacts</h5>
+                    <a href="mailto:hello@toqueneldom.com">hello@toqueneldom.com</a>
+                    <a href="tel:+34685872614">+34 685 87 26 14</a>
+                    <a href="tel:+34687924533">+34 687 92 45 33</a>
+                </div> 
+                <div class="footer-adress">
+                    <h5>Address</h5>
+                    <p>Calle de Leonor Jovani</p>
+                    <p>Benimaclet, 46020</p>
+                    <p>Valencia, Spain</p>
+                </div>
+            </div>
+    </footer>
 </body>
 </html>
