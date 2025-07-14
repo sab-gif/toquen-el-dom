@@ -100,20 +100,20 @@ git clone git@github.com:sab-gif/toquen-el-dom.git
 ```
 2. Open the index.html file with your browser.
 
-### Execute with Docker
+### Execute with Docker Desktop local (use Dockerfile2)
 
 >Requirements:
-> - Install Docker in your device.
+> - Install Docker desktop in your device.
 > - Download or clone the repository.
-
+> - Make sure that you are in the repository folder in the terminal
 
 1. Build an image from the Dockerfile.
 ```
-docker build -t <image-name> -f Dockerfile .
+docker build -t <image-name> -f <Dockerfile-name> .
 ```
 2. Run the image to start the container.
 ```
-docker run -p 8080:80 -name <image-name> <container-name>
+docker run -p 8080:80 --name <container-name> <image-name>
 ```
 3. Open in a browser the port 8080.
 
